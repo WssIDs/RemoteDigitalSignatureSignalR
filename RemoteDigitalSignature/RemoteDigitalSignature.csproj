@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>main.ico</ApplicationIcon>
+	<PlatformTarget>x86</PlatformTarget>
+	<AssemblyVersion>1.3.215.23313</AssemblyVersion>
+	<FileVersion>1.3.215.23313</FileVersion>
+	<Version>1.3.215</Version>
+	<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<NeutralResourcesLanguageAttribute>ru</NeutralResourcesLanguageAttribute>
+	<SatelliteResourceLanguages>ru</SatelliteResourceLanguages>
+	<NeutralLanguage>ru</NeutralLanguage>
+	<AssemblyTitle>RemoteDigitalSignature</AssemblyTitle>
+	<Product>RemoteDigitalSignature</Product>
+	<ProductName>Remote Digital Signature</ProductName>
+	<Description>Модуль взаимодействия с криптографическим ПО</Description>
+	<Company>ИВЦ Минфина</Company>
+	<Copyright>Copyright ©  2023</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <ShouldCreateLogs>False</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>IncrementOnDemand.IncrementOnDemand.IncrementWithResetOnIncrease.DateStamp</AssemblyVersionSettings>
+    <UpdatePackageVersion>True</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>IncrementOnDemand.IncrementOnDemand.IncrementWithResetOnIncrease.DateStamp</AssemblyFileVersionSettings>
+    <PackageVersionSettings>AssemblyFileVersion.IncrementWithAutoReset.None</PackageVersionSettings>
+    <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>True</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyVersionSettings>IncrementOnDemand.IncrementOnDemand.Increment.DateStamp</AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>IncrementOnDemand.IncrementOnDemand.Increment.DateStamp</AssemblyFileVersionSettings>
+    <PackageVersionSettings>AssemblyFileVersion.IncrementWithAutoReset.None</PackageVersionSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="main.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <FrameworkReference Include="Microsoft.AspNetCore.App" Version="2.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SignalRSwaggerGen" Version="4.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RemoteDigitalSignature.Service\RemoteDigitalSignature.Service.csproj" />
+    <ProjectReference Include="..\RemoteDigitalSignature.ViewModels\RemoteDigitalSignature.ViewModels.csproj" />
+    <ProjectReference Include="..\RemoteDigitalSignature.Views\RemoteDigitalSignature.Views.csproj" />
+  </ItemGroup>
+
+</Project>

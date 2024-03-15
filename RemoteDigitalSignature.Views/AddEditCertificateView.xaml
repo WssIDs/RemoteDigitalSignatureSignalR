@@ -1,0 +1,44 @@
+﻿<Window x:Class="RemoteDigitalSignature.Views.AddEditCertificateView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RemoteDigitalSignature.Views"
+        xmlns:behaviors="clr-namespace:Common.Mvvm.Behaviors;assembly=Common.Mvvm"
+        xmlns:viewModels="clr-namespace:RemoteDigitalSignature.ViewModels;assembly=RemoteDigitalSignature.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=viewModels:AddEditCertificateViewModel, IsDesignTimeCreatable=True}"
+        Title="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
+        Height="200" WindowStartupLocation="CenterOwner"
+        Width="500"
+        behaviors:DialogCloser.DialogResult="{Binding Path=DialogResult}" ResizeMode="NoResize" Icon="/RemoteDigitalSignature.Views;component/Resources/main.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock FontWeight="DemiBold" Grid.Column="0" Grid.Row="0" Text="Наименование сертификата" Margin="2"/>
+            <TextBox  Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Grid.Column="1" Grid.Row="0" Text="{Binding Certificate.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, 
+                            NotifyOnValidationError=True}"  Margin="2"/>
+            <TextBlock FontWeight="DemiBold" Grid.Column="0" Grid.Row="1" Text="Путь загрузки сертификата или СОС"  Margin="2"/>
+            <TextBox  Validation.ErrorTemplate="{StaticResource ValidationTemplate}" Grid.Column="1" Grid.Row="1" Text="{Binding Certificate.Path, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True, 
+                            NotifyOnValidationError=True}"  Margin="2"/>
+        </Grid>
+        <Grid Grid.Row="2" Background="#FFF3F3F3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="7">
+                <Button x:Name="OkButton" Content="OK"  Template="{StaticResource AcceptDefaultButtonTemplate}" Padding="18 4" Background="White" HorizontalAlignment="Left" Margin="2" IsDefault="True" Command="{Binding Path=SaveCertificateCommand}"/>
+                <Button Content="Отмена" Template="{StaticResource CancelDefaultButtonTemplate}" Padding="16 4" Background="White" HorizontalAlignment="Left" Margin="2" IsCancel="True"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

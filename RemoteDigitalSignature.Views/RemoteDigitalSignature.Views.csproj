@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<UseWPF>true</UseWPF>
+	  <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\gerald.png" />
+    <None Remove="Resources\ivcmf.png" />
+    <None Remove="Resources\main.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RemoteDigitalSignature.ViewModels\RemoteDigitalSignature.ViewModels.csproj" />
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\gerald.png" />
+    <Resource Include="Resources\ivcmf.png" />
+    <Resource Include="Resources\main.ico" />
+  </ItemGroup>
+
+</Project>

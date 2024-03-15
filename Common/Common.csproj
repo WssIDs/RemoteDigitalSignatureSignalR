@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<AssemblyVersion>1.0.0.1</AssemblyVersion>
+		<ProductVersion>1.0.0.1</ProductVersion>
+		<FileVersion>1.0.0.1</FileVersion>
+		<Version>1.0.0.1</Version>
+		<AssemblyTitle>АИС Гохран</AssemblyTitle>
+		<AssemblyName>Common</AssemblyName>
+		<Product>Common</Product>
+		<ProductName>Common</ProductName>
+		<Description>Common</Description>
+		<Company>ИВЦ Минфина</Company>
+		<Copyright>Copyright ©  2022</Copyright>
+		<Trademark></Trademark>
+		<NeutralResourcesLanguageAttribute>ru</NeutralResourcesLanguageAttribute>
+		<PlatformTarget>x86</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+</Project>
